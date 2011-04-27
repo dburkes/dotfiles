@@ -1,0 +1,41 @@
+[user]
+  email = dburkes@netable.com
+  name = Danny Burkes
+[core]
+  whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
+[alias]
+  rb = rebase -i origin
+  st = status
+  s = status
+  a = add .
+  ci = commit
+  cm = commit -m
+  cam = commit -am
+  amend = commit --amend
+  conflicts = !git ls-files --unmerged | cut -c51- | sort -u | xargs $EDITOR
+  l = log --graph --decorate --pretty=oneline --abbrev-commit
+  co = checkout
+[branch "master"]
+  rebase = true
+  remote = origin
+  merge = refs/heads/master
+[branch]
+  autosetuprebase = always
+[push]
+  default = current
+[color]
+  ui = auto
+[color "branch"]
+  current = yellow reverse
+  local = yellow
+  remote = green
+[color "diff"]
+  meta = yellow bold
+  frag = magenta bold
+  old = red bold
+  new = green bold
+[color "status"]
+  added = yellow
+  changed = green
+  untracked = cyan
+  whitespace = red reverse
